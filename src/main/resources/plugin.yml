@@ -1,11 +1,7 @@
 name: Minehut-Tracker
 version: 1.0-SNAPSHOT
 main: galaxydevnetwork.minehuttracker.MinehutTracker
-<<<<<<< Updated upstream
-api-version: 1.19
-=======
 api-version: 1.18
->>>>>>> Stashed changes
 authors: [ galaxydevel0per ]
 description: What's the next hhut you wanna know?
 website: https://galaxydevnetwork.github.io/minehut_tracker

@@ -21,7 +21,19 @@ public class mhtracker implements CommandExecutor {
             return true;
         }
         Player p = (Player) sender;
-        if (args[0].equalsIgnoreCase("reload")) {
+        if (args.length == 0) {
+            p.sendMessage(prefix + Color(" &aVersion: 1.1"));
+            p.sendMessage(Color("&7Plugin from &b&nhttps://github.com/meme20200/minehut-tracker"));
+            p.sendMessage(Color("&3meme20200 is not Affiliated with Minehut or Mojang, AB."));
+            return true;
+        }
+        else if (args[0].equalsIgnoreCase("info")) {
+            p.sendMessage(prefix + Color(" &aVersion: 1.1"));
+            p.sendMessage(Color("&7Plugin from &b&nhttps://github.com/meme20200/minehut-tracker"));
+            p.sendMessage(Color("&3meme20200 is not Affiliated with Minehut or Mojang, AB."));
+            return true;
+        }
+        else if (args[0].equalsIgnoreCase("reload")) {
             if (p.hasPermission("mhtracker.admin")) {
                 plugin.getConfig().getString("prefix");
                 plugin.reloadConfig();
@@ -31,11 +43,12 @@ public class mhtracker implements CommandExecutor {
                 p.sendMessage(prefix + Color("&cOh no no, you can't reload this plugin"));
                 return true;
             }
+        } else {
+            p.sendMessage(prefix + Color(" &aVersion: 1.1"));
+            p.sendMessage(Color("&7Plugin from &b&nhttps://github.com/meme20200/minehut-tracker"));
+            p.sendMessage(Color("&3meme20200 is not Affiliated with Minehut or Mojang, AB."));
+            return true;
         }
-        p.sendMessage(prefix + Color(" &aVersion: 1.0"));
-        p.sendMessage(Color("&8Plugin from https://github.com/meme20200/minehut-tracker"));
-        p.sendMessage(Color("&3meme20200 is not Affiliated with Minehut or Mojang, AB."));
-        return true;
     }
     public String Color(String s) {
         s = ChatColor.translateAlternateColorCodes('&', s);

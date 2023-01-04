@@ -73,12 +73,10 @@ public class checkserver implements CommandExecutor {
                         if (serverData.has("using_cosmetics")) {
                             p.sendMessage(Color("&fUsing Cosmetics: &7" + serverData.getBoolean("using_cosmetics")));
                         }
-                        //DateTimeFormatter formatter = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).withLocale(Locale.UK);
-                        //String a = String.valueOf(serverData.getInt("creation"));
-                        //long fbt = Long.parseLong(a);
-                        //ZonedDateTime dateTime = Instant.ofEpochMilli(fbt).atZone(ZoneId.of("UTC"));
+                        Date a = new Date(serverData.getLong("creation"));
                         SimpleDateFormat dateFormat = new SimpleDateFormat("E, MMM dd yyyy hh:mm aa");
-                        p.sendMessage(Color("&fCreation Timestamp: &7" + Data.getJSONObject("server").getInt("creation")));
+                        p.sendMessage(Color("&fCreation Date: &7" + dateFormat.format(a)));
+                        p.sendMessage(Color("&fCreation Timestamp: &7" + Data.getJSONObject("server").getLong("creation")));
                         return true;
                     }
                 } catch (Exception e) {
